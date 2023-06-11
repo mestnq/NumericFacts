@@ -207,11 +207,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginStart="30dp"
         android:src="@drawable/history"
         android:elevation="5dp"
-        app:layout_constraintStart_toStartOf="@id/home_icon"
-        app:layout_constraintEnd_toEndOf="@id/favorites_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/rectangle_24"
         app:layout_constraintBottom_toTopOf="@id/text_history"
         />

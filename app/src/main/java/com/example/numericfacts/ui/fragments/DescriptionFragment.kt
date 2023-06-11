@@ -1,11 +1,17 @@
 package com.example.numericfacts.ui.fragments
 
 import android.os.Bundle
+import android.text.Html
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.numericfacts.R
+import com.example.numericfacts.databinding.FragmentDescriptionBinding
+import com.example.numericfacts.databinding.FragmentHomeBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,6 +24,9 @@ private const val pumpum = "param2"
  * create an instance of this fragment.
  */
 class DescriptionFragment : Fragment() {
+
+    private lateinit var binding: FragmentDescriptionBinding
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -31,11 +40,23 @@ class DescriptionFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_description, container, false)
+    ): View {
+        binding = FragmentDescriptionBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val args: DescriptionFragmentArgs by navArgs()
+        binding.textDescription.text = resources.getString(R.string.description, args.textDescription)
+        
+        binding.ok.setOnClickListener {
+            view.findNavController().navigateUp()
+        }
     }
 
     companion object {

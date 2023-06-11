@@ -5,7 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import com.example.numericfacts.R
+import com.example.numericfacts.databinding.FragmentIntroBinding
+import java.text.SimpleDateFormat
+import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,6 +22,10 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class IntroFragment : Fragment() {
+
+    private lateinit var binding: FragmentIntroBinding
+    private val SDF = SimpleDateFormat("EEEE, d MMMM y")
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -31,11 +39,24 @@ class IntroFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_intro, container, false)
+    ): View {
+        binding = FragmentIntroBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val currentDate = SDF.format(Date())
+        binding.date.text = currentDate
+
+        binding.start.setOnClickListener {
+            val action = IntroFragmentDirections.actionIntroFragmentToHomeFragment()
+            view.findNavController().navigate(action)
+        }
     }
 
     companion object {

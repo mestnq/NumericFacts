@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.numericfacts.R
+import com.example.numericfacts.databinding.FragmentChooseNumberBinding
+import com.example.numericfacts.databinding.FragmentDescriptionBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,6 +20,9 @@ private const val s1 = "param2"
  * create an instance of this fragment.
  */
 class ChooseNumberFragment : Fragment() {
+
+    private lateinit var binding: FragmentChooseNumberBinding
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -27,17 +32,18 @@ class ChooseNumberFragment : Fragment() {
         arguments?.let {
             param1 = it.getString(s)
             param2 = it.getString(s1)
+            //todo: AlertDialogBuilder and найти метод в нем который будет тормозить всю внешнюю хрень
         }
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_choose_number, container, false)
+    ): View {
+        binding = FragmentChooseNumberBinding.inflate(inflater, container, false)
+        return binding.root
     }
-
     companion object {
         /**
          * Use this factory method to create a new instance of
