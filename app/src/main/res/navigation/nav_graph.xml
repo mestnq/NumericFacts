@@ -51,10 +51,10 @@
             app:destination="@id/favoritesListFragment" />
         <argument
             android:name="text_description"
-            app:argType="string"
-            app:nullable="true"
+            app:argType="integer" />
+           <!-- app:nullable="true"
             android:defaultValue="null"
-            />
+            />-->
     </fragment>
     <fragment
         android:id="@+id/chooseNumberFragment"

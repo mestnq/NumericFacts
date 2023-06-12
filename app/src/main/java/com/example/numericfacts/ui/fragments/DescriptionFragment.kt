@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.text.HtmlCompat
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.numericfacts.R
@@ -52,8 +53,10 @@ class DescriptionFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val args: DescriptionFragmentArgs by navArgs()
-        binding.textDescription.text = resources.getString(R.string.description, args.textDescription)
-        
+
+        val coloredText = HtmlCompat.fromHtml(getString(args.textDescription), HtmlCompat.FROM_HTML_MODE_LEGACY)
+        binding.textDescription.text = coloredText
+
         binding.ok.setOnClickListener {
             view.findNavController().navigateUp()
         }

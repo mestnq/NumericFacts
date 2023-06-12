@@ -12,10 +12,9 @@
     <string name="date_type">date</string>
     <string name="trivia">trivia</string>
     <string name="random">random!</string>
-    <string name="description">This function will allow you to find out a fact about <font color='#DC7070'>%1$s.</font></string>
-    <!--<string name="description_trivia">This function will allow you to find out a fact about <font color='#DC7070'>anything.</font></string>
-    <string name="description_date">This function will allow you to find out a fact about any <font color='#DC7070'>any date.</font></string>-->
-    <!--any mathematical number-->
+    <string name="description_math"><![CDATA[This function will allow you to find out a fact about any <font color="#FF0000">mathematical number.</font>]]></string>
+    <string name="description_trivia"><![CDATA[This function will allow you to find out a fact about <font color="#FF0000">anything.</font>]]></string>
+    <string name="description_date"><![CDATA[This function will allow you to find out a fact about any <font color="#FF0000">date.</font>]]></string>
     <string name="enjoy">Enjoy!</string>
     <string name="ok">OK</string>
     <string name="text_type">You have chosen this type:</string>
@@ -34,5 +33,6 @@
     <string name="favorites">Favorites</string>
     <string name="find_your_favorites">Find your favorites</string>
     <string name="fact_list_2">April 30th is the day in 1894 that Coxey\'s Army reaches Washington, D.C. to protest the unemployment caused by the Panic of 1893.</string>
+    <string name="error">Oops! There was some error, <font color='#DC7070'>sorry.</font></string>
 
 </resources>

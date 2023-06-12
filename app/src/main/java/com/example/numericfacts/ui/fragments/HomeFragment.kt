@@ -58,24 +58,24 @@ class HomeFragment : Fragment() {
         //region Helpers
         binding.helper1.setOnClickListener {
             view.findNavController().navigate(
-                HomeFragmentDirections.actionHomeFragmentToDescriptionFragment("any mathematical number")
+                HomeFragmentDirections.actionHomeFragmentToDescriptionFragment(R.string.description_math)
             )
         }
         binding.helper2.setOnClickListener {
             view.findNavController().navigate(
-                HomeFragmentDirections.actionHomeFragmentToDescriptionFragment("any date")
+                HomeFragmentDirections.actionHomeFragmentToDescriptionFragment(R.string.description_date)
             )
         }
         binding.helper3.setOnClickListener {
             view.findNavController().navigate(
-                HomeFragmentDirections.actionHomeFragmentToDescriptionFragment("anything")
+                HomeFragmentDirections.actionHomeFragmentToDescriptionFragment(R.string.description_trivia)
             )
         }
         //endregion
 
         //region Bottom toolbar
 
-        /*binding.
+        /*binding.bar.
             .setOnClickListener {
             view.findNavController().navigate(
                 HomeFragmentDirections.actionHomeFragmentToDescriptionFragment(getString(R.string.description_math))
