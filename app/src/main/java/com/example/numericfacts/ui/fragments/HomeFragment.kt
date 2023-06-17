@@ -1,7 +1,6 @@
 package com.example.numericfacts.ui.fragments
 
 import android.os.Bundle
-import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -57,31 +56,14 @@ class HomeFragment : Fragment() {
 
         //region Helpers
         binding.helper1.setOnClickListener {
-            view.findNavController().navigate(
-                HomeFragmentDirections.actionHomeFragmentToDescriptionFragment(R.string.description_math)
-            )
+            showDescriptionDialog(R.string.description_math)
         }
         binding.helper2.setOnClickListener {
-            view.findNavController().navigate(
-                HomeFragmentDirections.actionHomeFragmentToDescriptionFragment(R.string.description_date)
-            )
+            showDescriptionDialog(R.string.description_date)
         }
         binding.helper3.setOnClickListener {
-            view.findNavController().navigate(
-                HomeFragmentDirections.actionHomeFragmentToDescriptionFragment(R.string.description_trivia)
-            )
+            showDescriptionDialog(R.string.description_trivia)
         }
-        //endregion
-
-        //region Bottom toolbar
-
-        /*binding.bar.
-            .setOnClickListener {
-            view.findNavController().navigate(
-                HomeFragmentDirections.actionHomeFragmentToDescriptionFragment(getString(R.string.description_math))
-            )
-        }*/
-
         //endregion
 
         //region Rectangles
@@ -109,6 +91,11 @@ class HomeFragment : Fragment() {
             view.findNavController().navigate(action)
         }
         //endregion
+    }
+
+    private fun showDescriptionDialog(res: Int) {
+        val dd = DialogDescription().newInstance(res)
+        dd!!.show(childFragmentManager, DialogDescription.TAG)
     }
 
     companion object {

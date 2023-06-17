@@ -34,5 +34,6 @@
     <string name="find_your_favorites">Find your favorites</string>
     <string name="fact_list_2">April 30th is the day in 1894 that Coxey\'s Army reaches Washington, D.C. to protest the unemployment caused by the Panic of 1893.</string>
     <string name="error">Oops! There was some error, <font color='#DC7070'>sorry.</font></string>
+    <string name="error_connection">Sorry, but an error has occurred. Check connection.</string>
 
 </resources>
