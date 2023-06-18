@@ -1,17 +1,17 @@
 package com.example.numericfacts
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.example.numericfacts.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-
+    private lateinit var bottomNavigationView: BottomNavigationView
     private var navController: NavController? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,21 +21,34 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setDisplayUseLogoEnabled(true)
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment
         navController = navHostFragment.findNavController()
+
+        BottomNavigationViewSelected()
     }
 
-    /*override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        val inflater = menuInflater
-        inflater.inflate(R.menu.bottom_app_bar_menu, menu)
+    private fun BottomNavigationViewSelected() {
+        bottomNavigationView = findViewById(R.id.bottom_navigation_view)
+        bottomNavigationView.visibility = View.GONE
 
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.app_bar_favorites -> navController!!.navigate(R.id.action_homeFragment_to_favoritesListFragment)
-            R.id.app_bar_history -> navController!!.navigate(R.id.action_homeFragment_to_historyListFragment)
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            when(item.itemId) {
+                R.id.app_bar_favorites -> {
+                    navController!!.navigate(R.id.favoritesListFragment)
+                    true
+                }
+                R.id.app_bar_history -> {
+                    navController!!.navigate(R.id.historyListFragment)
+                    true
+                }
+                R.id.app_bar_home -> {
+                    navController!!.navigate(R.id.homeFragment)
+                    true
+                }
+                else -> false
+            }
         }
+    }
 
-        return true
-    }*/
+    fun showBottomNavigation() {
+        bottomNavigationView.visibility = View.VISIBLE
+    }
 }

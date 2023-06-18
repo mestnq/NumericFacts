@@ -4,6 +4,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/app_bar_home"
+        android:icon="@drawable/home"
+        android:title="@string/home"
+        app:showAsAction="ifRoom"/>
+
+    <item
         android:id="@+id/app_bar_favorites"
         android:icon="@drawable/favorites"
         android:title="@string/favorites"

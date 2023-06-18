@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import com.example.numericfacts.MainActivity
 import com.example.numericfacts.R
 import com.example.numericfacts.databinding.FragmentHomeBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -53,6 +55,8 @@ class HomeFragment : Fragment() {
 
         val currentDate = SDF.format(Date())
         binding.currentDay.text = currentDate
+
+        (activity as MainActivity?)?.showBottomNavigation()
 
         //region Helpers
         binding.helper1.setOnClickListener {

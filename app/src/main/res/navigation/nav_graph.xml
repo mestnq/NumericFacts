@@ -19,13 +19,6 @@
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 
-    <dialog
-        android:id="@+id/dialogDescriptionFragment"
-        android:name="com.example.numericfacts.ui.fragments.DialogDescription"
-        android:label="description"
-        tools:layout="@layout/fragment_description" >
-    </dialog>
-
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.numericfacts.ui.fragments.HomeFragment"
@@ -177,6 +170,13 @@
         <action
             android:id="@+id/action_favoritesListFragment_to_homeFragment"
             app:destination="@id/homeFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_favoritesListFragment_to_historyListFragment"
+            app:destination="@id/historyListFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
