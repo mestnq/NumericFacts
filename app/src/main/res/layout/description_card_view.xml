@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/card"
+    android:id="@+id/description_card_view"
     android:backgroundTint="@color/white"
     app:cardCornerRadius="20dp"
     android:layout_width="match_parent"

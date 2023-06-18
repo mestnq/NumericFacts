@@ -9,7 +9,6 @@ import androidx.navigation.findNavController
 import com.example.numericfacts.MainActivity
 import com.example.numericfacts.R
 import com.example.numericfacts.databinding.FragmentHomeBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -71,35 +70,38 @@ class HomeFragment : Fragment() {
         //endregion
 
         //region Rectangles
-        val actionToNum = HomeFragmentDirections.actionHomeFragmentToChooseNumberFragment()
         //math
         binding.rectangle1.setOnClickListener {
-            view.findNavController().navigate(actionToNum)
+            showChooseNumberDialog(R.string.math_type)
         }
-        val actionToDate = HomeFragmentDirections.actionHomeFragmentToChooseDateFragment()
         //date
         binding.rectangle2.setOnClickListener {
-            view.findNavController().navigate(actionToDate)
+            ChooseDateDialog().show(childFragmentManager, ChooseDateDialog.TAG)
         }
         //trivia
         binding.rectangle3.setOnClickListener {
-            view.findNavController().navigate(actionToDate)
+            showChooseNumberDialog(R.string.trivia_type)
         }
         //random
         binding.rectangle4.setOnClickListener {
-            val action = if (Math.random() % 2 === 0.0) {
-                actionToNum
+            val type = if ((0..10).random() > 5) {
+                R.string.trivia_type
             } else {
-                actionToDate
+                R.string.math_type
             }
-            view.findNavController().navigate(action)
+            showChooseNumberDialog(type)
         }
         //endregion
     }
 
     private fun showDescriptionDialog(res: Int) {
-        val dd = DialogDescription().newInstance(res)
-        dd!!.show(childFragmentManager, DialogDescription.TAG)
+        val dd = DescriptionDialog().newInstance(res)
+        dd.show(childFragmentManager, DescriptionDialog.TAG)
+    }
+
+    private fun showChooseNumberDialog(res: Int) {
+        val dd = ChooseNumberDialog().newInstance(res)
+        dd.show(childFragmentManager, ChooseNumberDialog.TAG)
     }
 
     companion object {

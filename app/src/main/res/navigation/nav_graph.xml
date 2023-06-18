@@ -26,20 +26,6 @@
         tools:layout="@layout/fragment_home">
 
         <action
-            android:id="@+id/action_homeFragment_to_chooseNumberFragment"
-            app:destination="@id/chooseNumberFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
-        <action
-            android:id="@+id/action_homeFragment_to_chooseDateFragment"
-            app:destination="@id/chooseDateFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
-        <action
             android:id="@+id/action_homeFragment_to_historyListFragment"
             app:destination="@id/historyListFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
@@ -54,67 +40,7 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
     </fragment>
-    <fragment
-        android:id="@+id/chooseNumberFragment"
-        android:name="com.example.numericfacts.ui.fragments.ChooseNumberFragment"
-        android:label="fragment_choose_number"
-        tools:layout="@layout/fragment_choose_number" >
 
-        <action
-            android:id="@+id/action_chooseNumberFragment_to_resultFragment"
-            app:destination="@id/resultFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
-        <!--<action
-            android:id="@+id/action_chooseNumberFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />-->
-        <action
-            android:id="@+id/action_chooseNumberFragment_to_historyListFragment"
-            app:destination="@id/historyListFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
-        <action
-            android:id="@+id/action_chooseNumberFragment_to_favoritesListFragment"
-            app:destination="@id/favoritesListFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
-    </fragment>
-    <fragment
-        android:id="@+id/chooseDateFragment"
-        android:name="com.example.numericfacts.ui.fragments.ChooseDateFragment"
-        android:label="fragment_choose_date"
-        tools:layout="@layout/fragment_choose_date" >
-        <action
-            android:id="@+id/action_chooseDateFragment_to_resultFragment"
-            app:destination="@id/resultFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
-        <!--<action
-            android:id="@+id/action_chooseDateFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />-->
-        <action
-            android:id="@+id/action_chooseDateFragment_to_historyListFragment"
-            app:destination="@id/historyListFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
-        <action
-            android:id="@+id/action_chooseDateFragment_to_favoritesListFragment"
-            app:destination="@id/favoritesListFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
-    </fragment>
     <fragment
         android:id="@+id/historyListFragment"
         android:name="com.example.numericfacts.ui.fragments.HistoryListFragment"
@@ -135,6 +61,7 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
+
     <fragment
         android:id="@+id/resultFragment"
         android:name="com.example.numericfacts.ui.fragments.ResultFragment"
@@ -162,6 +89,7 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
+
     <fragment
         android:id="@+id/favoritesListFragment"
         android:name="com.example.numericfacts.ui.fragments.FavoritesListFragment"
@@ -182,4 +110,24 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
+
+
+    <dialog
+        android:id="@+id/chooseDateDialog"
+        android:name="com.example.numericfacts.ui.fragments.ChooseDateDialog"
+        android:label="choose_date_dialog"
+        tools:layout="@layout/choose_date_card_view">
+        <action
+            android:id="@+id/action_chooseDateDialog_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </dialog>
+
+    <dialog
+        android:id="@+id/chooseNumberDialog"
+        android:name="com.example.numericfacts.ui.fragments.ChooseNumberDialog"
+        android:label="choose_number_dialog"
+        tools:layout="@layout/choose_number_card_view">
+    </dialog>
+
+
 </navigation>

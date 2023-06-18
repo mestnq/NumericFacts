@@ -10,12 +10,11 @@ import androidx.core.text.HtmlCompat
 import androidx.fragment.app.DialogFragment
 import com.example.numericfacts.R
 
+class DescriptionDialog : DialogFragment() {
+    private var descriptionStringId = 0
 
-class DialogDescription : DialogFragment() {
-    var descriptionStringId = 0
-
-    fun newInstance(res: Int): DialogDescription? {
-        val frag = DialogDescription()
+    fun newInstance(res: Int): DescriptionDialog {
+        val frag = DescriptionDialog()
         val args = Bundle()
         args.putInt("res", res)
         frag.arguments = args
@@ -31,7 +30,13 @@ class DialogDescription : DialogFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val view: View = inflater.inflate(R.layout.description_card_view, container, false)
+
+        return inflater.inflate(R.layout.description_card_view, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         val textView = view.findViewById<TextView>(R.id.text_description)
         val coloredText = HtmlCompat.fromHtml(getString(descriptionStringId), HtmlCompat.FROM_HTML_MODE_LEGACY)
         textView.text = coloredText
@@ -40,8 +45,6 @@ class DialogDescription : DialogFragment() {
         button.setOnClickListener {
             dismiss()
         }
-
-        return view
     }
 
     companion object {
