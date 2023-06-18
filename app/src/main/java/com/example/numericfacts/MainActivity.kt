@@ -21,7 +21,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.setDisplayUseLogoEnabled(true)
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment
         navController = navHostFragment.findNavController()
 
         bottomNavigationViewSelected()
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.visibility = View.GONE
 
         bottomNavigationView.setOnItemSelectedListener { item ->
-            when(item.itemId) {
+            when (item.itemId) {
                 R.id.app_bar_favorites -> {
                     navController!!.navigate(R.id.favoritesListFragment)
                     true

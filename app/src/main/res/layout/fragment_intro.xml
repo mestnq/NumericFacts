@@ -12,73 +12,68 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
+        android:gravity="top"
+        android:lineSpacingExtra="2sp"
         android:text="@string/date"
         android:textAppearance="@style/date"
-        android:lineSpacingExtra="2sp"
         android:translationY="-0.9sp"
-        android:gravity="top"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/calendar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:clipToOutline="true"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/calendar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:clipToOutline="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/abeezee_italic"
+        android:gravity="top"
+        android:lineSpacingExtra="3sp"
         android:text="@string/app_name"
         android:textAppearance="@style/app_name"
-        android:fontFamily="@font/abeezee_italic"
-        android:lineSpacingExtra="3sp"
         android:translationY="-1.63sp"
-        android:gravity="top"
-        app:layout_constraintTop_toBottomOf="@id/calendar"
-        app:layout_constraintStart_toStartOf="@id/calendar"
         app:layout_constraintEnd_toEndOf="@id/calendar"
-        />
+        app:layout_constraintStart_toStartOf="@id/calendar"
+        app:layout_constraintTop_toBottomOf="@id/calendar" />
 
     <Button
         android:id="@+id/start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/start"
-        android:fontFamily="@font/abeezee_italic"
-        android:background="@drawable/rounded_button"
         android:layout_marginTop="8dp"
-        android:textColor="@color/green"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/abeezee_italic"
+        android:text="@string/start"
         android:textAllCaps="false"
+        android:textColor="@color/green"
         app:backgroundTint="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/app_name"
-        app:layout_constraintStart_toStartOf="@id/app_name"
         app:layout_constraintEnd_toEndOf="@id/app_name"
-        />
+        app:layout_constraintStart_toStartOf="@id/app_name"
+        app:layout_constraintTop_toBottomOf="@id/app_name" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/app_info"
-        android:textColor="@color/grey"
-        android:textAppearance="@style/app_info"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:lineSpacingExtra="2sp"
-        android:translationY="-0.98sp"
         android:gravity="center_horizontal|top"
-        />
+        android:lineSpacingExtra="2sp"
+        android:text="@string/app_info"
+        android:textAppearance="@style/app_info"
+        android:textColor="@color/grey"
+        android:translationY="-0.98sp"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

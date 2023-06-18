@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
     android:layout_marginBottom="?attr/actionBarSize"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background"
     tools:context=".ui.fragments.ResultFragment">
 
     <TextView
@@ -13,23 +13,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
+        android:gravity="top"
+        android:lineSpacingExtra="2sp"
         android:text="@string/chosen_date"
         android:textAppearance="@style/date"
-        android:lineSpacingExtra="2sp"
         android:translationY="-0.9sp"
-        android:gravity="top"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/rectangle_1"
         android:layout_width="match_parent"
         android:layout_height="550dp"
-        android:background="@drawable/rectangle_2"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
+        android:background="@drawable/rectangle_2"
         app:backgroundTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,8 +41,8 @@
         android:id="@+id/text_view_fact"
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:autoSizeTextType="uniform"
         android:paddingStart="20dp"
@@ -60,27 +59,27 @@
     <Button
         android:layout_width="160dp"
         android:layout_height="40dp"
+        android:layout_marginStart="20dp"
         android:background="@drawable/border_button"
-        android:textAllCaps="false"
         android:fontFamily="@font/abeezee_italic"
         android:text="@string/add_to_favorites"
-        android:layout_marginStart="20dp"
+        android:textAllCaps="false"
         app:backgroundTint="@color/green"
-        app:layout_constraintTop_toBottomOf="@id/text_view_fact"
+        app:layout_constraintBottom_toBottomOf="@id/rectangle_1"
         app:layout_constraintStart_toStartOf="@id/rectangle_1"
-        app:layout_constraintBottom_toBottomOf="@id/rectangle_1" />
+        app:layout_constraintTop_toBottomOf="@id/text_view_fact" />
 
     <Button
         android:layout_width="100dp"
         android:layout_height="40dp"
+        android:layout_marginEnd="20dp"
         android:background="@drawable/border_button"
-        android:textAllCaps="false"
         android:fontFamily="@font/abeezee_italic"
         android:text="@string/ok"
-        android:layout_marginEnd="20dp"
+        android:textAllCaps="false"
         app:backgroundTint="@color/so_light_green"
-        app:layout_constraintTop_toBottomOf="@id/text_view_fact"
+        app:layout_constraintBottom_toBottomOf="@id/rectangle_1"
         app:layout_constraintEnd_toEndOf="@id/rectangle_1"
-        app:layout_constraintBottom_toBottomOf="@id/rectangle_1" />
+        app:layout_constraintTop_toBottomOf="@id/text_view_fact" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

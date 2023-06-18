@@ -16,8 +16,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:navGraph="@navigation/nav_graph"
-        />
+        app:navGraph="@navigation/nav_graph" />
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/bottom_app_bar_menu"
@@ -32,9 +31,9 @@
             android:layout_gravity="bottom"
             app:backgroundTint="@color/white"
             app:fabAlignmentMode="center"
-            app:menu="@menu/bottom_app_bar_menu"
             app:itemIconTint="@color/black_grey"
-            app:itemTextColor="@color/black_grey"/>
+            app:itemTextColor="@color/black_grey"
+            app:menu="@menu/bottom_app_bar_menu" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/number_card_view"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:backgroundTint="@color/green"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:backgroundTint="@color/green">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
@@ -14,74 +14,69 @@
             android:id="@+id/close_number_card_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:clipToOutline="true"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:background="@drawable/close"
-            app:layout_constraintTop_toTopOf="parent"
+            android:clipToOutline="true"
             app:layout_constraintEnd_toEndOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/text_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autoSizeTextType="uniform"
             android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
             android:layout_marginTop="50dp"
-            android:textAppearance="@style/description"
-            android:text="@string/text_type"
+            android:layout_marginEnd="30dp"
+            android:autoSizeTextType="uniform"
             android:fontFamily="@font/abeezee_regular"
             android:gravity="center_horizontal|top"
+            android:text="@string/text_type"
+            android:textAppearance="@style/description"
             android:textColor="@color/white"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/text_description_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:autoSizeTextType="uniform"
-            android:textAppearance="@style/description"
-            android:text="type"
-            android:textColor="@color/light_red"
             android:fontFamily="@font/abeezee_regular"
-            app:layout_constraintTop_toBottomOf="@id/text_description"
-            app:layout_constraintStart_toStartOf="parent"
+            android:text="type"
+            android:textAppearance="@style/description"
+            android:textColor="@color/light_red"
             app:layout_constraintEnd_toEndOf="parent"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_description" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/number_text_input_layout"
             android:layout_width="260dp"
             android:layout_height="55dp"
-            android:hint="@string/enter_the_number"
-            android:elevation="5dp"
             android:layout_marginBottom="10dp"
+            android:elevation="5dp"
+            android:hint="@string/enter_the_number"
             app:boxBackgroundColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@id/choose_number_card_view"
-            app:layout_constraintTop_toBottomOf="@id/text_description_type"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:endIconMode="clear_text"
             app:errorEnabled="true"
             app:hintTextColor="@color/white"
-            >
+            app:layout_constraintBottom_toTopOf="@id/choose_number_card_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_description_type">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/number_text_input_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/abeezee_italic"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
                 android:inputType="number"
                 android:maxLength="10"
-                app:boxStrokeColor="@color/white"
-                />
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                app:boxStrokeColor="@color/white" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -89,17 +84,16 @@
             android:id="@+id/choose_number_card_view"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/border_button"
-            android:textAllCaps="false"
             android:fontFamily="@font/abeezee_italic"
             android:text="@string/choose"
+            android:textAllCaps="false"
             android:textColor="@color/green"
-            android:layout_marginBottom="10dp"
             app:backgroundTint="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            />
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

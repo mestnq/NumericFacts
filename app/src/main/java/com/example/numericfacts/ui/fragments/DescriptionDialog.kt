@@ -38,7 +38,8 @@ class DescriptionDialog : DialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val textView = view.findViewById<TextView>(R.id.text_description)
-        val coloredText = HtmlCompat.fromHtml(getString(descriptionStringId), HtmlCompat.FROM_HTML_MODE_LEGACY)
+        val coloredText =
+            HtmlCompat.fromHtml(getString(descriptionStringId), HtmlCompat.FROM_HTML_MODE_LEGACY)
         textView.text = coloredText
 
         val button = view.findViewById<Button>(R.id.ok)

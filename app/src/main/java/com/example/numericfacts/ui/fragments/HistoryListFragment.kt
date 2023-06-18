@@ -5,8 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.findNavController
-import com.example.numericfacts.R
 import com.example.numericfacts.databinding.FragmentHistoryListBinding
 
 // TODO: Rename parameter arguments, choose names that match

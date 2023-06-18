@@ -12,11 +12,9 @@ class ChooseDateDialog : DialogFragment() {
     private lateinit var binding: ChooseDateCardViewBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         binding = ChooseDateCardViewBinding.inflate(inflater, container, false)
-
         return binding.root
     }
 
