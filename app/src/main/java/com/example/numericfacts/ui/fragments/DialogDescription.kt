@@ -31,7 +31,7 @@ class DialogDescription : DialogFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val view: View = inflater.inflate(R.layout.fragment_description, container, false)
+        val view: View = inflater.inflate(R.layout.description_card_view, container, false)
         val textView = view.findViewById<TextView>(R.id.text_description)
         val coloredText = HtmlCompat.fromHtml(getString(descriptionStringId), HtmlCompat.FROM_HTML_MODE_LEGACY)
         textView.text = coloredText

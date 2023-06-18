@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.numericfacts.R
 import com.example.numericfacts.databinding.FragmentChooseNumberBinding
-import com.example.numericfacts.databinding.FragmentDescriptionBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
