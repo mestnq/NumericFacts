@@ -5,8 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
-import androidx.navigation.findNavController
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
+import com.example.numericfacts.R
 import com.example.numericfacts.databinding.ChooseNumberCardViewBinding
+import com.example.numericfacts.ui.fragments.ResultFragment
 
 class ChooseNumberDialog : DialogFragment() {
     private lateinit var binding: ChooseNumberCardViewBinding
@@ -21,6 +24,11 @@ class ChooseNumberDialog : DialogFragment() {
         return frag
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        typeStringId = arguments?.getInt("res")!!
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -31,24 +39,22 @@ class ChooseNumberDialog : DialogFragment() {
         return binding.root
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        typeStringId = arguments?.getInt("res")!!
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.textDescriptionType.text = getString(typeStringId)
 
         binding.chooseNumberCardView.setOnClickListener {
-            val number = binding.numberTextInputEditText.text
+            val number = binding.numberTextInputEditText.text.toString().toInt() //todo: oh my God
 
             if (number != null) {
                 dismiss()
 
-                val action = ChooseDateDialogDirections.actionChooseDateDialogToResultFragment()
-                view.findNavController().navigate(action) //todo
+                val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+                val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+                fragmentTransaction.add(R.id.fragment_container, ResultFragment.newInstance(getString(typeStringId), number, null))
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit()
             }
         }
 

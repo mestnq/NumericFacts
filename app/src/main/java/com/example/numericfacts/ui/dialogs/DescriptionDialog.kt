@@ -13,7 +13,7 @@ import com.example.numericfacts.R
 class DescriptionDialog : DialogFragment() {
     private var descriptionStringId = 0
 
-    fun newInstance(res: Int): DescriptionDialog {
+    fun newInstance(res: Int): DescriptionDialog { // взято из документации гугла, все вопросы к ним
         val frag = DescriptionDialog()
         val args = Bundle()
         args.putInt("res", res)
@@ -27,8 +27,7 @@ class DescriptionDialog : DialogFragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
 
         return inflater.inflate(R.layout.description_card_view, container, false)
