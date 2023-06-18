@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:autoSizeTextType="uniform"
             android:fontFamily="@font/abeezee_regular"
-            android:text="type"
+            android:text="@string/date_type"
             android:textAppearance="@style/description"
             android:textColor="@color/light_red"
             app:layout_constraintEnd_toEndOf="parent"
