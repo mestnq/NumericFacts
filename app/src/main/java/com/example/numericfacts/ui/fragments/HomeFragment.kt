@@ -8,6 +8,9 @@ import androidx.fragment.app.Fragment
 import com.example.numericfacts.MainActivity
 import com.example.numericfacts.R
 import com.example.numericfacts.databinding.FragmentHomeBinding
+import com.example.numericfacts.ui.dialogs.ChooseDateDialog
+import com.example.numericfacts.ui.dialogs.ChooseNumberDialog
+import com.example.numericfacts.ui.dialogs.DescriptionDialog
 import java.text.SimpleDateFormat
 import java.util.*
 

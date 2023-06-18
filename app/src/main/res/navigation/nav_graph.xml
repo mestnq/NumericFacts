@@ -114,7 +114,7 @@
 
     <dialog
         android:id="@+id/chooseDateDialog"
-        android:name="com.example.numericfacts.ui.fragments.ChooseDateDialog"
+        android:name="com.example.numericfacts.ui.dialogs.ChooseDateDialog"
         android:label="choose_date_dialog"
         tools:layout="@layout/choose_date_card_view">
         <action
@@ -124,7 +124,7 @@
 
     <dialog
         android:id="@+id/chooseNumberDialog"
-        android:name="com.example.numericfacts.ui.fragments.ChooseNumberDialog"
+        android:name="com.example.numericfacts.ui.dialogs.ChooseNumberDialog"
         android:label="choose_number_dialog"
         tools:layout="@layout/choose_number_card_view" />
 

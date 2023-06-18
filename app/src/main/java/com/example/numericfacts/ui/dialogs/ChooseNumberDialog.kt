@@ -1,4 +1,4 @@
-package com.example.numericfacts.ui.fragments
+package com.example.numericfacts.ui.dialogs
 
 import android.os.Bundle
 import android.view.LayoutInflater
