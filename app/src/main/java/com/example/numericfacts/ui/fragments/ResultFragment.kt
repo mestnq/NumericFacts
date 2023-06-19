@@ -20,6 +20,7 @@ import com.example.numericfacts.databinding.FragmentResultBinding
 import com.example.numericfacts.domain.data.NumericInfo
 import com.example.numericfacts.network.LoadingResult
 import com.example.numericfacts.ui.viewmodels.MainViewModel
+import xyz.teamgravity.checkinternet.CheckInternet
 
 private const val TYPE = "type"
 private const val NUMBER = "number" // or day
@@ -40,18 +41,21 @@ class ResultFragment : Fragment() {
     ): View {
         binding = FragmentResultBinding.inflate(inflater, container, false)
 
-        if (isNetworkConnected()) {
-            init()
-            viewModel.init(_type, _number, _month)
-        }
-
-        changeVisibilityElements(View.GONE);
+        network()
 
         return binding.root
     }
 
-    private fun isNetworkConnected(): Boolean {
-        return checkConnection(this)
+    private fun network() {
+        CheckInternet().check { connected ->
+            if (connected) {
+                init()
+                viewModel.init(_type, _number, _month)
+                changeVisibilityElements(View.GONE);
+            } else {
+                // there is no internet
+            }
+        }
     }
 
     private fun init() {
