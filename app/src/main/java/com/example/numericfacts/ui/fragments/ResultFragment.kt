@@ -41,61 +41,59 @@ class ResultFragment : Fragment() {
     ): View {
         binding = FragmentResultBinding.inflate(inflater, container, false)
 
-        network()
+//        network()
 
         return binding.root
     }
 
-    private fun network() {
-        CheckInternet().check { connected ->
-            if (connected) {
-                init()
-                viewModel.init(_type, _number, _month)
-                changeVisibilityElements(View.GONE);
-            } else {
-                // there is no internet
-            }
-        }
-    }
+//   private fun network() {
+//        CheckInternet().check { connected ->
+//            if (connected) {
+//                init()
+//                viewModel.init(_type, _number, _month)
+//                changeVisibilityElements(View.GONE);
+//            } else {
+//                // there is no internet
+//            }
+//        }
+//    }
+//
+//    private fun init() {
+//        val observer = Observer<LoadingResult<NumericInfo>?> { newValue ->
+//            when (newValue) {
+//                is LoadingResult.Success -> {
+//                    binding.textViewFact.text = newValue.value?.text
+//                    changeVisibilityElements(View.VISIBLE)
+//                }
+//                is LoadingResult.Failure -> {
+//                    binding.textViewFact.text = newValue.message
+//                    changeVisibilityElements(View.GONE)
+//                }
+//                else -> {
+//                    binding.textViewFact.text = getString(R.string.error_connection)
+//                    changeVisibilityElements(View.GONE)
+//                }
+//            }
+//
+//        }
+//        viewModel.liveData.observe(viewLifecycleOwner, observer)
+//    }
 
-    private fun init() {
-        val observer = Observer<LoadingResult<NumericInfo>?> { newValue ->
-            when (newValue) {
-                is LoadingResult.Success -> {
-                    binding.textViewFact.text = newValue.value?.text
-                    changeVisibilityElements(View.VISIBLE)
-                }
-                is LoadingResult.Failure -> {
-                    binding.textViewFact.text = newValue.message
-                    changeVisibilityElements(View.GONE)
-                }
-                else -> {
-                    binding.textViewFact.text = getString(R.string.error_connection)
-                    changeVisibilityElements(View.GONE)
-                }
-            }
-
-        }
-        viewModel.liveData.observe(viewLifecycleOwner, observer)
-    }
-
-    private fun changeVisibilityElements(visible: Int) {
-        binding.addToFavorites.visibility = visible
-    }
+//    private fun changeVisibilityElements(visible: Int) {
+//        binding.addToFavorites.visibility = visible
+//    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        (activity as MainActivity?)?.changeVisibilityBottomNavigation(View.GONE)
-
         binding.okResult.setOnClickListener {
-            view.findNavController().navigate(R.id.homeFragment)
+            view.findNavController().popBackStack()
         }
 
-        binding.chosenDate.text = _number.toString()
+        //binding.chosenDate.text = _number.toString()
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    /*override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         arguments?.let {
@@ -103,12 +101,12 @@ class ResultFragment : Fragment() {
             _number = it.getInt(NUMBER)
             _month = it.getInt(MONTH)
         }
-    }
+    }*/
 
-    companion object {
+    /*companion object {
         @JvmStatic
         fun newInstance(type: String, _dayOrNumber: Int, _month: Int?) =
-            //todo: проверить поход в сеть без инета и наложение фрагментов друг на друга
+            //todo: наложение фрагментов друг на друга
             ResultFragment().apply {
                 arguments = Bundle().apply {
                     putString(TYPE, type)
@@ -118,5 +116,5 @@ class ResultFragment : Fragment() {
                     }
                 }
             }
-    }
+    }*/
 }

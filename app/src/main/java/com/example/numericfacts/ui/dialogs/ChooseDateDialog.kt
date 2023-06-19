@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.navigation.fragment.findNavController
 import com.example.numericfacts.R
 import com.example.numericfacts.databinding.ChooseDateCardViewBinding
 import com.example.numericfacts.ui.fragments.ResultFragment
@@ -30,18 +31,7 @@ class ChooseDateDialog : DialogFragment() {
 
             dismiss()
 
-            val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-            fragmentTransaction.add(
-                R.id.fragment_container,
-                ResultFragment.newInstance("date", day, month)
-            )
-            fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit()
-        }
-
-        binding.closeDateCardView.setOnClickListener {
-            dismiss()
+            findNavController().navigate(R.id.action_homeFragment_to_resultFragment2)
         }
     }
 

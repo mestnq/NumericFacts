@@ -7,8 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.numericfacts.R
 import com.example.numericfacts.databinding.ChooseNumberCardViewBinding
+import com.example.numericfacts.ui.fragments.HomeFragment
 import com.example.numericfacts.ui.fragments.ResultFragment
 
 class ChooseNumberDialog : DialogFragment() {
@@ -49,18 +52,17 @@ class ChooseNumberDialog : DialogFragment() {
 
             dismiss()
 
-            val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-            fragmentTransaction.add(
-                R.id.fragment_container,
-                ResultFragment.newInstance(getString(typeStringId), number, null)
-            )
-            fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit()
-        }
+//            findNavController().navigate(R.id.action_chooseDateDialog_to_resultFragment)
 
-        binding.closeNumberCardView.setOnClickListener {
-            dismiss()
+
+//            val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+//            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+//            fragmentTransaction.add(
+//                R.id.fragment_container,
+//                ResultFragment.newInstance(getString(typeStringId), number, null)
+//            )
+//            fragmentTransaction.addToBackStack("HomeFragment");
+//            fragmentTransaction.commit()
         }
     }
 

@@ -18,7 +18,6 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
-
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.numericfacts.ui.fragments.HomeFragment"
@@ -32,6 +31,9 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_homeFragment_to_resultFragment2"
+            app:destination="@id/resultFragment" />
 
     </fragment>
 
@@ -54,13 +56,6 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
-        <action
-            android:id="@+id/action_resultFragment_to_homeFragment"
-            app:destination="@id/homeFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 
     <fragment
@@ -69,23 +64,6 @@
         android:label="fragment_favorites_list"
         tools:layout="@layout/fragment_favorites_list">
     </fragment>
-
-
-  <!--  <dialog
-        android:id="@+id/chooseDateDialog"
-        android:name="com.example.numericfacts.ui.dialogs.ChooseDateDialog"
-        android:label="choose_date_dialog"
-        tools:layout="@layout/choose_date_card_view">
-        <action
-            android:id="@+id/action_chooseDateDialog_to_resultFragment"
-            app:destination="@id/resultFragment" />
-    </dialog>
-
-    <dialog
-        android:id="@+id/chooseNumberDialog"
-        android:name="com.example.numericfacts.ui.dialogs.ChooseNumberDialog"
-        android:label="choose_number_dialog"
-        tools:layout="@layout/choose_number_card_view" />-->
 
 
 </navigation>
