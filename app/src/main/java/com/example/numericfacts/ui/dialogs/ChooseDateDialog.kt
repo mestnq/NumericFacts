@@ -5,12 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.fragment.findNavController
 import com.example.numericfacts.R
 import com.example.numericfacts.databinding.ChooseDateCardViewBinding
-import com.example.numericfacts.ui.fragments.ResultFragment
 
 class ChooseDateDialog : DialogFragment() {
     private lateinit var binding: ChooseDateCardViewBinding
@@ -31,7 +28,22 @@ class ChooseDateDialog : DialogFragment() {
 
             dismiss()
 
-            findNavController().navigate(R.id.action_homeFragment_to_resultFragment2)
+            val bundle = Bundle()
+            bundle.apply {
+                putString("type", "date")
+            }
+            bundle.apply {
+                putInt("day_or_number", day)
+            }
+            bundle.apply {
+                putInt("month", month)
+            }
+
+            findNavController().navigate(R.id.action_homeFragment_to_resultFragment2, bundle)
+        }
+
+        binding.closeDateCardView.setOnClickListener {
+            dismiss()
         }
     }
 

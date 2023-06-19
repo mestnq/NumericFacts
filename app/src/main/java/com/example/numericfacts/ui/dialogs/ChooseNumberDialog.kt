@@ -5,14 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.numericfacts.R
 import com.example.numericfacts.databinding.ChooseNumberCardViewBinding
-import com.example.numericfacts.ui.fragments.HomeFragment
-import com.example.numericfacts.ui.fragments.ResultFragment
 
 class ChooseNumberDialog : DialogFragment() {
     private lateinit var binding: ChooseNumberCardViewBinding
@@ -33,9 +28,7 @@ class ChooseNumberDialog : DialogFragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         binding = ChooseNumberCardViewBinding.inflate(inflater, container, false)
 
@@ -52,17 +45,19 @@ class ChooseNumberDialog : DialogFragment() {
 
             dismiss()
 
-//            findNavController().navigate(R.id.action_chooseDateDialog_to_resultFragment)
+            val bundle = Bundle()
+            bundle.apply {
+                putString("type", getString(typeStringId))
+            }
+            bundle.apply {
+                putInt("day_or_number", number)
+            }
 
+            findNavController().navigate(R.id.action_homeFragment_to_resultFragment2, bundle)
+        }
 
-//            val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-//            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-//            fragmentTransaction.add(
-//                R.id.fragment_container,
-//                ResultFragment.newInstance(getString(typeStringId), number, null)
-//            )
-//            fragmentTransaction.addToBackStack("HomeFragment");
-//            fragmentTransaction.commit()
+        binding.closeNumberCardView.setOnClickListener {
+            dismiss()
         }
     }
 

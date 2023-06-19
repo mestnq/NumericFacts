@@ -36,7 +36,12 @@ class MainViewModel : ViewModel() {
                 val numericInfo = responses?.let { NumericInfo.getTool(it) }
                 liveData.postValue(LoadingResult.Success(numericInfo))
             } else {
-                liveData.postValue(LoadingResult.Failure("internet error", "check your internet connection"))
+                liveData.postValue(
+                    LoadingResult.Failure(
+                        "internet error",
+                        "check your internet connection"
+                    )
+                )
             }
         }
     }
