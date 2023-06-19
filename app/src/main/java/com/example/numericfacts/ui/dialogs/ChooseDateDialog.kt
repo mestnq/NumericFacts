@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
-import androidx.navigation.findNavController
 import com.example.numericfacts.R
 import com.example.numericfacts.databinding.ChooseDateCardViewBinding
 import com.example.numericfacts.ui.fragments.ResultFragment
@@ -26,18 +25,19 @@ class ChooseDateDialog : DialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.chooseDateCardView.setOnClickListener {
-            val day = binding.dayTextInputEditText.text.toString().toInt() //todo: oh my God
-            val month = binding.monthTextInputEditText.text.toString().toInt() //todo: oh my God
+            val day = binding.dayTextInputEditText.text.toString().toInt() //todo: validate
+            val month = binding.monthTextInputEditText.text.toString().toInt()
 
-            if (day != null && month != null) {
-                dismiss()
+            dismiss()
 
-                val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-                val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-                fragmentTransaction.add(R.id.fragment_container, ResultFragment.newInstance("date", month, day))
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit()
-            }
+            val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.add(
+                R.id.fragment_container,
+                ResultFragment.newInstance("date", day, month)
+            )
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit()
         }
 
         binding.closeDateCardView.setOnClickListener {

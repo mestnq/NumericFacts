@@ -1,11 +1,20 @@
 package com.example.numericfacts.ui.fragments
 
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.os.Build
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.getSystemService
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.findNavController
+import androidx.test.core.app.ApplicationProvider.getApplicationContext
+import com.example.numericfacts.MainActivity
 import com.example.numericfacts.R
 import com.example.numericfacts.databinding.FragmentResultBinding
 import com.example.numericfacts.domain.data.NumericInfo
@@ -31,10 +40,18 @@ class ResultFragment : Fragment() {
     ): View {
         binding = FragmentResultBinding.inflate(inflater, container, false)
 
-        init()
-        viewModel.init(_type, _number, _month)
+        if (isNetworkConnected()) {
+            init()
+            viewModel.init(_type, _number, _month)
+        }
+
+        changeVisibilityElements(View.GONE);
 
         return binding.root
+    }
+
+    private fun isNetworkConnected(): Boolean {
+        return checkConnection(this)
     }
 
     private fun init() {
@@ -42,15 +59,15 @@ class ResultFragment : Fragment() {
             when (newValue) {
                 is LoadingResult.Success -> {
                     binding.textViewFact.text = newValue.value?.text
-                    changeVisibiliteElements(View.VISIBLE)
+                    changeVisibilityElements(View.VISIBLE)
                 }
                 is LoadingResult.Failure -> {
                     binding.textViewFact.text = newValue.message
-                    changeVisibiliteElements(View.GONE)
+                    changeVisibilityElements(View.GONE)
                 }
                 else -> {
                     binding.textViewFact.text = getString(R.string.error_connection)
-                    changeVisibiliteElements(View.GONE)
+                    changeVisibilityElements(View.GONE)
                 }
             }
 
@@ -58,33 +75,41 @@ class ResultFragment : Fragment() {
         viewModel.liveData.observe(viewLifecycleOwner, observer)
     }
 
-    private fun changeVisibiliteElements(visible: Int) {
+    private fun changeVisibilityElements(visible: Int) {
         binding.addToFavorites.visibility = visible
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.chosenDate.text = _number.toString() //todo: continue
+        (activity as MainActivity?)?.changeVisibilityBottomNavigation(View.GONE)
+
+        binding.okResult.setOnClickListener {
+            view.findNavController().navigate(R.id.homeFragment)
+        }
+
+        binding.chosenDate.text = _number.toString()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         arguments?.let {
             _type = it.getString(TYPE)!!
             _number = it.getInt(NUMBER)
-            _month= it.getInt(MONTH)
+            _month = it.getInt(MONTH)
         }
     }
 
     companion object {
         @JvmStatic
-        fun newInstance(type: String, _dayOrNumber: Int, _month: Int?) = //todo: перепроверить где месяц а где день
+        fun newInstance(type: String, _dayOrNumber: Int, _month: Int?) =
+            //todo: проверить поход в сеть без инета и наложение фрагментов друг на друга
             ResultFragment().apply {
                 arguments = Bundle().apply {
                     putString(TYPE, type)
                     putInt(NUMBER, _dayOrNumber)
-                    if (_month != null){
+                    if (_month != null) {
                         putInt(MONTH, _month)
                     }
                 }

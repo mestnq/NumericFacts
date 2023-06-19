@@ -45,17 +45,18 @@ class ChooseNumberDialog : DialogFragment() {
         binding.textDescriptionType.text = getString(typeStringId)
 
         binding.chooseNumberCardView.setOnClickListener {
-            val number = binding.numberTextInputEditText.text.toString().toInt() //todo: oh my God
+            val number = binding.numberTextInputEditText.text.toString().toInt() //todo: validate
 
-            if (number != null) {
-                dismiss()
+            dismiss()
 
-                val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
-                val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-                fragmentTransaction.add(R.id.fragment_container, ResultFragment.newInstance(getString(typeStringId), number, null))
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit()
-            }
+            val fragmentManager: FragmentManager = requireActivity().supportFragmentManager
+            val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.add(
+                R.id.fragment_container,
+                ResultFragment.newInstance(getString(typeStringId), number, null)
+            )
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit()
         }
 
         binding.closeNumberCardView.setOnClickListener {

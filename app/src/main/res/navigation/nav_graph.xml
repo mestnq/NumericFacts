@@ -32,13 +32,7 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
-        <action
-            android:id="@+id/action_homeFragment_to_favoritesListFragment"
-            app:destination="@id/favoritesListFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
     </fragment>
 
     <fragment
@@ -46,20 +40,6 @@
         android:name="com.example.numericfacts.ui.fragments.HistoryListFragment"
         android:label="fragment_history_list"
         tools:layout="@layout/fragment_history_list">
-        <action
-            android:id="@+id/action_historyListFragment_to_homeFragment"
-            app:destination="@id/homeFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
-        <action
-            android:id="@+id/action_historyListFragment_to_favoritesListFragment"
-            app:destination="@id/favoritesListFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 
     <fragment
@@ -67,13 +47,6 @@
         android:name="com.example.numericfacts.ui.fragments.ResultFragment"
         android:label="fragment_result"
         tools:layout="@layout/fragment_result">
-        <action
-            android:id="@+id/action_resultFragment_to_historyListFragment"
-            app:destination="@id/historyListFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_resultFragment_to_favoritesListFragment"
             app:destination="@id/favoritesListFragment"
@@ -95,20 +68,6 @@
         android:name="com.example.numericfacts.ui.fragments.FavoritesListFragment"
         android:label="fragment_favorites_list"
         tools:layout="@layout/fragment_favorites_list">
-        <action
-            android:id="@+id/action_favoritesListFragment_to_homeFragment"
-            app:destination="@id/homeFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
-        <action
-            android:id="@+id/action_favoritesListFragment_to_historyListFragment"
-            app:destination="@id/historyListFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 
 

@@ -16,18 +16,18 @@ class MainViewModel : ViewModel() {
     val liveData = MutableLiveData<LoadingResult<NumericInfo>?>()
     private val network: INetworkSource = ApiNetworkSource()
 
-    fun init(type: String, num1: Int, num2: Int) { //todo: получше придумать
+    fun init(type: String, _dayOrNumber: Int, _month: Int) {
         viewModelScope.launch {
             val response = withContext(Dispatchers.IO) {
                 when (type) {
                     "math" -> {
-                        network.getMathInfo(num1)
+                        network.getMathInfo(_dayOrNumber)
                     }
                     "date" -> {
-                        network.getDateInfo(num2, num1)
+                        network.getDateInfo(_month, _dayOrNumber)
                     }
-                    else -> /*if(type == "trivia")*/ { //todo exc?
-                        network.getTriviaInfo(num1)
+                    else -> {
+                        network.getTriviaInfo(_dayOrNumber)
                     }
                 }
             }

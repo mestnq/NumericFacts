@@ -20,9 +20,7 @@ class HomeFragment : Fragment() {
     private val SDF = SimpleDateFormat("E, dd/M/yyyy")
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
@@ -34,7 +32,7 @@ class HomeFragment : Fragment() {
         val currentDate = SDF.format(Date())
         binding.currentDay.text = currentDate
 
-        (activity as MainActivity?)?.showBottomNavigation()
+        (activity as MainActivity?)?.changeVisibilityBottomNavigation(View.VISIBLE)
 
         //region Helpers
         binding.helper1.setOnClickListener {
@@ -62,7 +60,7 @@ class HomeFragment : Fragment() {
             showChooseNumberDialog(R.string.trivia_type)
         }
         //random
-        binding.rectangle4.setOnClickListener {
+        binding.rectangle4.setOnClickListener {//todo: created really random
             val type = if ((0..10).random() > 5) {
                 R.string.trivia_type
             } else {
