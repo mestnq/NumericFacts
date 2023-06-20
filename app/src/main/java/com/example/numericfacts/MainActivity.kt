@@ -8,6 +8,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.room.Room
 import com.example.numericfacts.databinding.ActivityMainBinding
+import com.example.numericfacts.domain.AppDatabase
 import com.example.numericfacts.domain.data.NumericInfoDbEntity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -27,7 +28,10 @@ class MainActivity : AppCompatActivity() {
 
         bottomNavigationViewSelected()
 
-
+        val db = Room.databaseBuilder(
+            applicationContext,
+            AppDatabase::class.java, "database-name"
+        ).build()
     }
 
     private fun bottomNavigationViewSelected() {
