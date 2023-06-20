@@ -55,7 +55,7 @@ class ResultFragment : Fragment() {
             when (newValue) {
                 is LoadingResult.Success -> {
                     binding.textViewFact.text = newValue.value?.text
-                    changeVisibilityElements(false)
+                    changeVisibilityElements(true)
                 }
                 is LoadingResult.Failure -> {
                     binding.textViewFact.text = newValue.message

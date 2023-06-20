@@ -41,21 +41,27 @@ class ChooseNumberDialog : DialogFragment() {
         binding.textDescriptionType.text = getString(typeStringId)
 
         binding.chooseNumberCardView.setOnClickListener {
-            val number = binding.numberTextInputEditText.text.toString().toInt() //todo: validate
+            val textNew = binding.numberTextInputEditText.text
 
-            dismiss()
+            try {
+                val number = binding.numberTextInputEditText.text.toString().toInt()
 
-            val bundle = Bundle()
-            bundle.apply {
-                putString("type", getString(typeStringId))
+                dismiss()
+
+                val bundle = Bundle()
+                bundle.apply {
+                    putString("type", getString(typeStringId))
+                }
+                bundle.apply {
+                    putInt("day_or_number", number)
+                }
+
+                findNavController().navigate(R.id.action_homeFragment_to_resultFragment2, bundle)
+
+            } catch (ex: Exception) {
+                //nothing?
             }
-            bundle.apply {
-                putInt("day_or_number", number)
-            }
-
-            findNavController().navigate(R.id.action_homeFragment_to_resultFragment2, bundle)
         }
-
         binding.closeNumberCardView.setOnClickListener {
             dismiss()
         }

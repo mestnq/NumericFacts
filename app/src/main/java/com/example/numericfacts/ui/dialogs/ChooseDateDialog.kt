@@ -23,23 +23,29 @@ class ChooseDateDialog : DialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.chooseDateCardView.setOnClickListener {
-            val day = binding.dayTextInputEditText.text.toString().toInt() //todo: validate
-            val month = binding.monthTextInputEditText.text.toString().toInt()
 
-            dismiss()
+            try {
+                val day = binding.dayTextInputEditText.text.toString().toInt()
+                val month = binding.monthTextInputEditText.text.toString().toInt()
 
-            val bundle = Bundle()
-            bundle.apply {
-                putString("type", "date")
-            }
-            bundle.apply {
-                putInt("day_or_number", day)
-            }
-            bundle.apply {
-                putInt("month", month)
+                dismiss()
+
+                val bundle = Bundle()
+                bundle.apply {
+                    putString("type", "date")
+                }
+                bundle.apply {
+                    putInt("day_or_number", day)
+                }
+                bundle.apply {
+                    putInt("month", month)
+                }
+
+                findNavController().navigate(R.id.action_homeFragment_to_resultFragment2, bundle)
+            } catch (ex: Exception) {
+                //nothing?
             }
 
-            findNavController().navigate(R.id.action_homeFragment_to_resultFragment2, bundle)
         }
 
         binding.closeDateCardView.setOnClickListener {
