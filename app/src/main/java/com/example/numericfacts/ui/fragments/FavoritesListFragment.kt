@@ -22,7 +22,6 @@ class FavoritesListFragment : Fragment() {
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
     private val viewModel by viewModels<FavoritesViewModel> { viewModelFactory }
-//    private var activity: Activity? = null
 
     private val adapter = FavoritesAdapter()
 
@@ -30,7 +29,6 @@ class FavoritesListFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         context.appComponent.inject(this)
-//        activity = if (requireActivity() is MainActivity) requireActivity() else null
         super.onAttach(context)
     }
 

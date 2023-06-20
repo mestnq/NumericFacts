@@ -43,9 +43,9 @@ class ResultFragment : Fragment() {
             if (connected) {
                 init()
                 viewModel.init(_type, _number, _month)
-                changeVisibilityElements(View.GONE);
             } else {
                 // there is no internet
+                changeVisibilityElements(View.GONE);
             }
         }
     }
