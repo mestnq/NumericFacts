@@ -6,9 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.numericfacts.databinding.FragmentFavoritesListBinding
+import com.example.numericfacts.ui.adapters.FavoritesListAdapter
 
 class FavoritesListFragment : Fragment() {
     private lateinit var binding: FragmentFavoritesListBinding
+    private val favoritesListAdapter = FavoritesListAdapter() //todo
 
     override fun onCreateView(
         inflater: LayoutInflater,
