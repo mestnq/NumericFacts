@@ -27,11 +27,6 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.findNavController()
 
         bottomNavigationViewSelected()
-
-        val db = Room.databaseBuilder(
-            applicationContext,
-            AppDatabase::class.java, "database-name"
-        ).build()
     }
 
     private fun bottomNavigationViewSelected() {
