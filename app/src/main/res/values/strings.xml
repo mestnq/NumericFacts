@@ -11,9 +11,9 @@
     <string name="date_type">date</string>
     <string name="trivia_type">trivia</string>
     <string name="random_type">random!</string>
-    <string name="description_math"><![CDATA[This function will allow you to find out a fact about any <font color="#FF0000">mathematical number.</font>]]></string>
-    <string name="description_trivia"><![CDATA[This function will allow you to find out a fact about <font color="#FF0000">anything.</font>]]></string>
-    <string name="description_date"><![CDATA[This function will allow you to find out a fact about any <font color="#FF0000">date.</font>]]></string>
+    <string name="description_math"><![CDATA[This function will allow you to find out a fact about any <font color="#EDA0A0">mathematical number.</font>]]></string>
+    <string name="description_trivia"><![CDATA[This function will allow you to find out a fact about <font color="#EDA0A0">anything.</font>]]></string>
+    <string name="description_date"><![CDATA[This function will allow you to find out a fact about any <font color="#EDA0A0">date.</font>]]></string>
     <string name="enjoy">Enjoy!</string>
     <string name="ok">OK</string>
     <string name="text_type">You have chosen this type:</string>
@@ -31,7 +31,7 @@
     <string name="favorites">Favorites</string>
     <string name="find_your_favorites">Find your favorites</string>
     <string name="fact_list_2">April 30th is the day in 1894 that Coxey\'s Army reaches Washington, D.C. to protest the unemployment caused by the Panic of 1893.</string>
-    <string name="error">Oops! There was some error, <font color='#DC7070'>sorry.</font></string>
+    <string name="error">Oops! There was some error, <font color='#EDA0A0'>sorry.</font></string>
     <string name="error_connection">Sorry, but an error has occurred. Check connection.</string>
     <string name="enter_the_number">Enter number</string>
 

@@ -4,8 +4,7 @@
     android:id="@+id/description_card_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/white"
-    app:cardCornerRadius="20dp">
+    android:backgroundTint="@color/green">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
@@ -33,6 +32,7 @@
             android:fontFamily="@font/abeezee_regular"
             android:gravity="center_horizontal|top"
             android:text="@string/error"
+            android:textColor="@color/white"
             android:textAppearance="@style/description"
             app:layout_constraintBottom_toBottomOf="@id/rectangle_1"
             app:layout_constraintEnd_toEndOf="@id/rectangle_1"
@@ -46,6 +46,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/abeezee_regular"
             android:text="@string/enjoy"
+            android:textColor="@color/white"
             android:textAppearance="@style/description"
             app:layout_constraintBottom_toBottomOf="@id/rectangle_1"
             app:layout_constraintEnd_toEndOf="@id/text_description"
@@ -65,8 +66,8 @@
             android:fontFamily="@font/abeezee_italic"
             android:text="@string/ok"
             android:textAppearance="@style/description"
-            android:textColor="@color/white"
-            app:backgroundTint="@color/so_light_green"
+            android:textColor="@color/green"
+            app:backgroundTint="@color/white"
             app:layout_constraintBottom_toBottomOf="@id/rectangle_1"
             app:layout_constraintEnd_toEndOf="@id/enjoy"
             app:layout_constraintStart_toStartOf="@id/enjoy"
