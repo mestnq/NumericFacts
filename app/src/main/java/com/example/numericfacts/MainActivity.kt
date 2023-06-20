@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import androidx.room.Room
 import com.example.numericfacts.databinding.ActivityMainBinding
+import com.example.numericfacts.domain.data.NumericInfoDbEntity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -24,6 +26,8 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.findNavController()
 
         bottomNavigationViewSelected()
+
+
     }
 
     private fun bottomNavigationViewSelected() {
