@@ -3,7 +3,7 @@ package com.example.numericfacts.ui.viewmodels
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.numericfacts.domain.data.NumericInfo
+import com.example.numericfacts.network.data.NumericInfo
 import com.example.numericfacts.network.LoadingResult
 import com.example.numericfacts.network.retrofit.ApiNetworkSource
 import com.example.numericfacts.network.retrofit.INetworkSource

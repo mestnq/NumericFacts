@@ -1,4 +1,4 @@
-package com.example.numericfacts.domain.data
+package com.example.numericfacts.network.data
 
 import com.example.numericfacts.network.models.NumericInfoRequest
 
