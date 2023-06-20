@@ -7,7 +7,7 @@ import com.example.numericfacts.domain.data.NumericInfoDbEntity
 
 @Dao
 interface ServiceDao {
-    @Query("UPDATE numeric_info SET is_favorites = true WHERE id = :id;")
+    @Query("UPDATE numeric_info SET is_favorites = 1 WHERE id = :id;")
     suspend fun addToFavorites(id: Long)
 
     @Insert
