@@ -1,6 +1,6 @@
 package com.example.numericfacts.network
 
-import com.example.numericfacts.domain.data.NumericInfo
+import com.example.numericfacts.network.data.NumericInfo
 
 sealed class LoadingResult<out T> {
     data class Success<out R>(val value: NumericInfo?): LoadingResult<R>()

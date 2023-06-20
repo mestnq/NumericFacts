@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.numericfacts.databinding.CardFavoritesBinding
-import com.example.numericfacts.domain.data.NumericInfo
+import com.example.numericfacts.network.data.NumericInfo
 
 class FavoritesListAdapter : ListAdapter<NumericInfo, RecyclerView.ViewHolder>(MyDiffCallback()) {
 

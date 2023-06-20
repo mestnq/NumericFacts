@@ -9,7 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import com.example.numericfacts.R
 import com.example.numericfacts.databinding.FragmentResultBinding
-import com.example.numericfacts.domain.data.NumericInfo
+import com.example.numericfacts.network.data.NumericInfo
 import com.example.numericfacts.network.LoadingResult
 import com.example.numericfacts.ui.viewmodels.MainViewModel
 import xyz.teamgravity.checkinternet.CheckInternet
