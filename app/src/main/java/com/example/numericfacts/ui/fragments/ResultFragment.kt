@@ -43,9 +43,9 @@ class ResultFragment : Fragment() {
             if (connected) {
                 init()
                 viewModel.init(_type, _number, _month)
-                changeVisibilityElements(View.GONE);
             } else {
                 // there is no internet
+                changeVisibilityElements(false);
             }
         }
     }
@@ -55,15 +55,15 @@ class ResultFragment : Fragment() {
             when (newValue) {
                 is LoadingResult.Success -> {
                     binding.textViewFact.text = newValue.value?.text
-                    changeVisibilityElements(View.VISIBLE)
+                    changeVisibilityElements(false)
                 }
                 is LoadingResult.Failure -> {
                     binding.textViewFact.text = newValue.message
-                    changeVisibilityElements(View.GONE)
+                    changeVisibilityElements(false)
                 }
                 else -> {
                     binding.textViewFact.text = getString(R.string.error_connection)
-                    changeVisibilityElements(View.GONE)
+                    changeVisibilityElements(false)
                 }
             }
 
@@ -71,8 +71,8 @@ class ResultFragment : Fragment() {
         viewModel.liveData.observe(viewLifecycleOwner, observer)
     }
 
-    private fun changeVisibilityElements(visible: Int) {
-        binding.addToFavorites.visibility = visible
+    private fun changeVisibilityElements(show: Boolean) {
+        binding.addToFavorites.visibility = if (show) View.VISIBLE else View.GONE
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
