@@ -5,21 +5,21 @@ import androidx.room.*
 @Entity(tableName = "numeric_info")
 data class NumericInfoDbEntity(
     @PrimaryKey val id: Long,
-    @ColumnInfo(name = "text_info") val text: String?,
+    @ColumnInfo(name = "text_info") val text: String,
     @ColumnInfo(name = "year") val year: Int?,
-    @ColumnInfo(name = "number") val number: Int?,
-    @ColumnInfo(name = "found") val found: Boolean?,
-    @ColumnInfo(name = "type") val type: String?,
-    @ColumnInfo(name = "is_favorites") val isFavorites: Boolean?
+    @ColumnInfo(name = "number") val number: Int,
+    @ColumnInfo(name = "found") val found: Boolean,
+    @ColumnInfo(name = "type") val type: String,
+    @ColumnInfo(name = "is_favorites") val isFavorites: Boolean
 ) {
     fun toNumericInfo(): NumericInfo = NumericInfo(
         id = 0,
-        text = text,
         year = year,
-        number = number,
         found = found,
-        type = type,
-        isFavorites = isFavorites
+        isFavorites = isFavorites,
+        number = number,
+        text = text,
+        type = type
     )
 
     companion object {
