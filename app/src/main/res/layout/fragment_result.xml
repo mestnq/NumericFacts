@@ -12,12 +12,11 @@
         android:id="@+id/chosen_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
         android:gravity="top"
         android:lineSpacingExtra="2sp"
         android:text="@string/chosen_date"
         android:textAppearance="@style/date"
-        android:translationY="-0.9sp"
+        app:layout_constraintBottom_toTopOf="@id/rectangle_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
